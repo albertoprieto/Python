@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <title>Punta Alta Online Shop - Pedidos -</title>
+  <style type="text/css">
+    p { margin:0 }
+
+    .cust-img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+    }
+    .fix-img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+  </style>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+</head>
+<div class="container">
+  <div class="mySwiper">
+    <div class="main-wrapper swiper-wrapper">
+      <div class="main-wrapper">
+
+        <h1>{{log_user}}</h1>
+        <p>Confirma tu compra:</p>
+        <p>{{select_pedido}}</p>
+        <p>  
+          <div class="card">
+            <img alt="" src="{{simg}}" class="rounded fix-img">
+              <div class="card-body">
+                <h5>Descripción del artículo:</h5>
+                  {%for desc in prod_desc %}
+                    <p>
+                      {{desc}}
+                    </p>
+                  {%endfor%}
+              </div>
+          </div>
+        </p>
+        <center>
+          <a href="/" class="btn btn-success" role="button">Regresar al inicio</a>
+        </center>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://api.whatsapp.com/send?phone=3326335834&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20un%20producto" class="float" target="_blank" data-toggle="tooltip" data-bs-placement="left" title="Compártenos tus dudas ó contacta con un asesor">
+    <i class="fa fa-whatsapp my-float"></i>
+  </a>
+</div>
+{% endblock %}

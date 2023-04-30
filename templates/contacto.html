@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <title>Devjap - Inicio</title>
+</head>
+<div class="jumbotron">
+  {% from "_formhelpers.html" import render_field %}
+  <center>
+    <form method=post>
+      <dl>
+        {{ render_field(form.username) }}
+        {{ render_field(form.email) }}
+        {{ render_field(form.message) }}
+      </dl>
+      <p><input type=submit value=Enviar></p>
+    </form>
+  </center>
+</div>
+{% endblock %}
